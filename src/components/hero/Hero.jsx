@@ -1,3 +1,4 @@
+import { Link } from "react-scroll";
 import "./hero.scss";
 import { motion } from "framer-motion";
 
@@ -43,20 +44,27 @@ const Hero = () => {
       <div className="hero">
         <div className="wrapper ">
           <motion.div
-            className="textContainer sm:w-14 mr-16 md:-ml-[600px]"
+            className="textContainer sm:w-14 md:-ml-[600px]"
             variants={textVariants}
             initial="initial"
             animate="animate"
           >
             <motion.h2 variants={textVariants}>Omer Faruq</motion.h2>
             <motion.h1 variants={textVariants}>
-              Full-stack Web Developer
+              Full-stack <br></br> Web Developer
             </motion.h1>
             <motion.div variants={textVariants} className="buttons">
               <motion.button variants={textVariants}>
-                See the Latest Works
+                <Link to="work" smooth={true} duration={500}>
+                  See the Latest Works
+                </Link>
               </motion.button>
-              <motion.button variants={textVariants}>Contact Me</motion.button>
+              <motion.button variants={textVariants}>
+                {" "}
+                <Link to="contact" smooth={true} duration={500}>
+                  Contact Me
+                </Link>
+              </motion.button>
             </motion.div>
             <motion.img
               variants={textVariants}
@@ -72,10 +80,14 @@ const Hero = () => {
           initial="initial"
           animate="animate"
         >
-          <img src="/public/codesnip.png" alt="" />
+          <img
+            className="opacity-40"
+            src="https://i.ibb.co/Z8N301V/codesnip.png"
+            alt=""
+          />
         </motion.div>
         <div className="imageContainer">
-          <img src="/public/hero.png" alt="" />
+          <img src="https://i.ibb.co/LvMHd4Y/hero.png" alt="" />
         </div>
       </div>
     </div>

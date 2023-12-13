@@ -18,6 +18,15 @@ import { Link } from "react-scroll";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
+  // const downloadResume = () => {
+  //   const resumeUrl = process.env.('https://drive.google.com/file/d/1tcW4Zk0qtPv8NEzjVnSyRcH-je8Btzar/view?usp=sharing') + '/resume.pdf';
+  //   const link = document.createElement('a');
+  //   link.href = resumeUrl;
+  //   link.download = 'Your_Name_Resume.pdf'; // Set the desired filename
+  //   link.click();
+  // };
+  const googleDriveLink =
+    "https://drive.google.com/file/d/1tcW4Zk0qtPv8NEzjVnSyRcH-je8Btzar/view?usp=sharing";
   return (
     // <div className="navbar">
     //   {/* sidebar */}
@@ -66,22 +75,48 @@ const Navbar = () => {
         </div> */}
 
         <div className="flex gap-4">
-          <h1>Home</h1>
-          <h1>About Me</h1>
-          <h1>My Work</h1>
+          <Link to="home" smooth={true} duration={500}>
+            <button>Home</button>
+          </Link>
+          <Link to="about" smooth={true} duration={500}>
+            <button>About</button>
+          </Link>
+          <a
+            href={googleDriveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+          >
+            <button>Download Resume</button>
+          </a>
+
+          <Link to="work" smooth={true} duration={500}>
+            <button> My Work</button>
+          </Link>
+          <Link to="skills" smooth={true} duration={500}>
+            <button>Skills</button>
+          </Link>
           <h1>Experience</h1>
-          <h1>Contact</h1>
+          <Link to="contact" smooth={true} duration={500}>
+            <button>Contact</button>
+          </Link>
         </div>
       </div>
       <div className="hidden lg:flex fixed flex-col top-[35%] left-0">
         <ul>
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600">
-            <a className="flex ml-10 gap-6 w-full text-gray-300" href="/">
+            <a
+              className="flex ml-10 gap-6 w-full text-gray-300"
+              href="https://www.linkedin.com/in/md-omer-faruq-3b36b29a/"
+            >
               Linkedin <FaLinkedin size={30} />
             </a>
           </li>
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]">
-            <a className="flex ml-12 gap-6 w-full text-gray-300" href="/">
+            <a
+              className="flex ml-12 gap-6 w-full text-gray-300"
+              href="https://github.com/Omer4ruq"
+            >
               Github <FaGithub size={30} />
             </a>
           </li>
@@ -91,7 +126,13 @@ const Navbar = () => {
             </a>
           </li>
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f69]">
-            <a className="flex ml-10 gap-6 w-full text-gray-300" href="/">
+            <a
+              className="flex ml-10 gap-6 w-full text-gray-300"
+              href={googleDriveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+            >
               Resume <BsFillPersonLinesFill size={30} />
             </a>
           </li>
