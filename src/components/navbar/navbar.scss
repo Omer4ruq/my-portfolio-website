@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .navbar {
   height: 100px;
 
@@ -9,13 +11,23 @@
     justify-content: space-between;
     background-color: rebeccapurple;
     height: 100%;
-    span {
-      font-weight: bold;
+    @media (max-width: 320px) {
+      display: none;
+      max-width: 200px;
     }
-
-    .opt {
-      display: flex;
-      gap: 20px;
+    @include mobile {
     }
+  }
+  .n {
+    font-weight: bold;
+    @media (max-width: 320px) {
+      display: none;
+    }
+    @include mobile {
+    }
+  }
+  .opt {
+    display: flex;
+    gap: 20px;
   }
 }

@@ -51,35 +51,32 @@ const Navbar = () => {
     //     </div>
     //   </div>
     // </div>
-    <div className=" w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300">
+    <div className=" w-full h-[80px] object-cover flex justify-between items-center px-4 bg-[#0a192f]   text-gray-300">
       {/* sidebar */}
-      <Sidebar></Sidebar>
-      <div>
+      <Sidebar className=""></Sidebar>
+
+      <div className="flex items-center justify-between p-4 z-[100] w-full absolute md:p-10">
         <motion.span
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 2, scale: 2 }}
           transition={{ duration: 1 }}
         >
-          Omer Faruq
+          <div className="hidden md:block ml-16 font-bold">Omer Faruq</div>
         </motion.span>
-      </div>
-      <div className="wrapper">
-        {/* <div>
-          <motion.span
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 2, scale: 2 }}
-            transition={{ duration: 1 }}
-          >
-            Omer Faruq
-          </motion.span>
-        </div> */}
 
-        <div className="flex gap-4">
+        {/* <motion.span
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 2, scale: 2 }}
+          transition={{ duration: 1 }}
+        >
+          Omer Faruq
+        </motion.span> */}
+        <div className="ml-10 flex gap-2 text-sm md:gap-4 text-1xl ">
           <Link to="home" smooth={true} duration={500}>
             <button>Home</button>
           </Link>
           <Link to="about" smooth={true} duration={500}>
-            <button>About</button>
+            <button className="hidden md:block">About</button>
           </Link>
           <a
             href={googleDriveLink}
@@ -98,7 +95,7 @@ const Navbar = () => {
           </Link>
           <h1>Experience</h1>
           <Link to="contact" smooth={true} duration={500}>
-            <button>Contact</button>
+            <button className="hidden md:block">Contact</button>
           </Link>
         </div>
       </div>

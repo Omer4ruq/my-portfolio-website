@@ -19,13 +19,14 @@
       justify-content: space-between;
       gap: 40px;
       position: absolute;
-
-      @include mobile {
-        height: 50%;
+      @media (max-width: 320px) {
+        height: 40%;
         width: 100%;
-        gap: 20px;
+        gap: 10px;
         align-items: center;
         text-align: center;
+      }
+      @include mobile {
       }
 
       h2 {
@@ -36,9 +37,11 @@
 
       h1 {
         font-size: 88px;
+        @media (max-width: 320px) {
+          font-size: 36px;
+        }
 
         @include mobile {
-          font-size: 36px;
         }
       }
 
@@ -52,6 +55,16 @@
           margin-right: 20px;
           cursor: pointer;
           font-weight: 300;
+          @media (max-width: 320px) {
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 10px;
+            background-color: transparent;
+            color: white;
+            margin-right: 10px;
+            cursor: pointer;
+            font-weight: 300;
+          }
         }
       }
 
@@ -66,12 +79,13 @@
     position: absolute;
     top: -40%;
     right: 0;
-
-    @include mobile {
-      height: 50%;
+    @media (max-width: 320px) {
+      height: 130%;
       width: 100%;
-      top: unset;
+      top: 20%;
       bottom: 0;
+    }
+    @include mobile {
     }
 
     img {

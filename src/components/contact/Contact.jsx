@@ -31,10 +31,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_94y20xo",
-        "template_v10u2oh",
+        "service_hkdlgwm",
+        "template_2g3vcxl",
         formRef.current,
-        "pX_2hasGmGcuvjXIW"
+        "J6q1pS19VMVuqoPQs"
       )
       .then(
         (result) => {
@@ -46,7 +46,7 @@ const Contact = () => {
       );
   };
   return (
-    <div>
+    <div className="contact">
       {/* <div
         name="contact"
         className="w-full h-screen bg-[#0a192f] flex justify-center items-center p-4"
@@ -90,12 +90,12 @@ const Contact = () => {
       </div> */}
       <motion.div
         ref={ref}
-        className="contact"
+        className="contact w-full bg-[#0a192f] lg:mt-28 mt-[750px]"
         variants={variants}
         initial="initial"
         whileInView="animate"
       >
-        <motion.div className="textContainer ml-20" variants={variants}>
+        <motion.div className="textContainer mb-20  ml-20" variants={variants}>
           <motion.h1 variants={variants}>Let’s work together</motion.h1>
           <motion.div className="item" variants={variants}>
             <h2>Mail</h2>
@@ -111,13 +111,16 @@ const Contact = () => {
           </motion.div>
         </motion.div>
         <div className="formContainer">
-          <motion.div
+          {/* <motion.div
             className="phoneSvg"
             initial={{ opacity: 1 }}
             whileInView={{ opacity: 0 }}
             transition={{ delay: 2, duration: 1 }}
           >
-            <svg width="450px" height="450px" viewBox="0 0 32.666 32.666">
+            <svg
+              className="w-[450px] h-[450px] hidden md:block"
+              viewBox="0 0 32.666 32.666"
+            >
               <motion.path
                 strokeWidth={0.2}
                 fill="none"
@@ -139,13 +142,14 @@ const Contact = () => {
             C32.666,7.326,25.339,0,16.333,0z"
               />
             </svg>
-          </motion.div>
+          </motion.div> */}
           <motion.form
+            className="mr-8"
             ref={formRef}
             onSubmit={sendEmail}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ delay: 4, duration: 1 }}
+            transition={{ delay: 2, duration: 1 }}
           >
             <input type="text" required placeholder="Name" name="name" />
             <input type="email" required placeholder="Email" name="email" />
@@ -156,7 +160,6 @@ const Contact = () => {
           </motion.form>
         </div>
       </motion.div>
-      );
     </div>
   );
 };
