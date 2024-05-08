@@ -28,6 +28,13 @@
       }
       @include mobile {
       }
+      @media (max-width: 1024px) {
+        height: 40%;
+        width: 100%;
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+      }
 
       h2 {
         font-size: 30px;
@@ -38,6 +45,9 @@
       h1 {
         font-size: 88px;
         @media (max-width: 320px) {
+          font-size: 36px;
+        }
+        @media (max-width: 1024px) {
           font-size: 36px;
         }
 
@@ -56,6 +66,16 @@
           cursor: pointer;
           font-weight: 300;
           @media (max-width: 320px) {
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 10px;
+            background-color: transparent;
+            color: white;
+            margin-right: 10px;
+            cursor: pointer;
+            font-weight: 300;
+          }
+          @media (max-width: 1024px) {
             padding: 10px;
             border: 1px solid white;
             border-radius: 10px;

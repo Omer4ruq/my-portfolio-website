@@ -11,7 +11,12 @@
   @media (max-width: 320px) {
     width: 100%;
     padding: 10px;
-    flex-direction: column;
+    display: grid;
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
+    padding: 10px;
+    display: grid;
   }
 
   .textContainer {
@@ -49,16 +54,16 @@
       padding: 50px;
       width: 100%;
     }
+    @media (max-width: 1024px) {
+      padding: 50px;
+      width: 100%;
+    }
 
     .phoneSvg {
       stroke: orange;
       position: absolute;
       margin: auto;
       z-index: -1;
-      @media (max-width: 320px) {
-        width: 50%;
-        z-index: -5;
-      }
     }
 
     form {

@@ -73,7 +73,7 @@ const Navbar = () => {
         </motion.span> */}
         <div className="ml-10 flex gap-2 text-sm md:gap-4 text-1xl ">
           <Link to="home" smooth={true} duration={500}>
-            <button>Home</button>
+            <button className="hidden md:block">Home</button>
           </Link>
           <Link to="about" smooth={true} duration={500}>
             <button className="hidden md:block">About</button>

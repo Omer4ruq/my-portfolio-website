@@ -12,10 +12,10 @@ import Mongo from "../../assets/projects/mongo.png";
 
 const Skills = () => {
   return (
-    <div>
+    <div className="mt-[550px] sm:mt-2">
       <div
         name="skills"
-        className="w-full  bg-[#0a192f] text-gray-300 lg:mt-16 mt-[700px]"
+        className="w-full   bg-[#0a192f] text-gray-300 absolute"
       >
         {/* Container */}
         <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">

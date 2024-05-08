@@ -42,9 +42,9 @@ const Hero = () => {
   return (
     <div>
       <div className="hero">
-        <div className="wrapper ">
+        <div className="wrapper">
           <motion.div
-            className="textContainer sm: -ml-[150px]  md:-ml-[600px]"
+            className="textContainer sm: -ml-[200px]   md:-ml-[600px]"
             variants={textVariants}
             initial="initial"
             animate="animate"
@@ -53,7 +53,7 @@ const Hero = () => {
             <motion.h1 variants={textVariants}>
               Full-stack <br></br> Web Developer
             </motion.h1>
-            <motion.div variants={textVariants} className="buttons ">
+            <motion.div variants={textVariants} className="buttons lg:-mt-8">
               <motion.button variants={textVariants}>
                 <Link to="work" smooth={true} duration={500}>
                   See the Latest Works

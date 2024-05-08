@@ -46,7 +46,7 @@ const Contact = () => {
       );
   };
   return (
-    <div className="contact">
+    <div className="contact mt-[550px] sm:mt-2">
       {/* <div
         name="contact"
         className="w-full h-screen bg-[#0a192f] flex justify-center items-center p-4"
@@ -90,7 +90,7 @@ const Contact = () => {
       </div> */}
       <motion.div
         ref={ref}
-        className="contact w-full bg-[#0a192f] lg:mt-28 mt-[750px]"
+        className="contact w-full bg-[#0a192f] "
         variants={variants}
         initial="initial"
         whileInView="animate"

@@ -9,7 +9,7 @@ import Work from "./components/work/Work";
 
 function App() {
   return (
-    <div className="w-full">
+    <div className="w-full mb-">
       <section>
         <Navbar></Navbar>
         <Hero></Hero>
@@ -22,20 +22,20 @@ function App() {
         <About></About>
       </section>
       {/* <section>services</section> */}
-      <section className="mt-10">
+      <section>
         <Work></Work>
       </section>
-      <section className="mt-10">
+      <section>
         <Skills></Skills>
       </section>
       {/* <section>protfolio2</section>
       <section>protfolio3</section> */}
       <section>
-        <Contact className="mt-10"></Contact>
+        <Contact></Contact>
       </section>
-      <section>
+      {/* <section>
         <Footer></Footer>
-      </section>
+      </section> */}
     </div>
   );
 }
