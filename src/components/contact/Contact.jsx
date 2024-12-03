@@ -46,7 +46,7 @@ const Contact = () => {
       );
   };
   return (
-    <div className="contact mt-[550px] sm:mt-2">
+    <div className="contact mt-[350px] sm:mt-2 -ml-10 ">
       {/* <div
         name="contact"
         className="w-full h-screen bg-[#0a192f] flex justify-center items-center p-4"
@@ -95,7 +95,10 @@ const Contact = () => {
         initial="initial"
         whileInView="animate"
       >
-        <motion.div className="textContainer mb-20  ml-20" variants={variants}>
+        <motion.div
+          className="textContainer lg:mb-20  ml-8 sm:ml-32 p-10"
+          variants={variants}
+        >
           <motion.h1 variants={variants}>Let’s work together</motion.h1>
           <motion.div className="item" variants={variants}>
             <h2>Mail</h2>
@@ -144,7 +147,7 @@ const Contact = () => {
             </svg>
           </motion.div> */}
           <motion.form
-            className="mr-8"
+            className="mr-8 -mt-8 sm:-mt-2"
             ref={formRef}
             onSubmit={sendEmail}
             initial={{ opacity: 0 }}

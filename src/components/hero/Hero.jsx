@@ -26,10 +26,10 @@ const textVariants = {
 };
 const sliderVariants = {
   initial: {
-    y: 0,
+    y: 100,
   },
   animate: {
-    y: -400,
+    y: -600,
     transition: {
       repeat: Infinity,
       repeatType: "mirror",
@@ -42,9 +42,9 @@ const Hero = () => {
   return (
     <div>
       <div className="hero">
-        <div className="wrapper">
+        <div className="wrapper mr-0 md:-pl-36">
           <motion.div
-            className="textContainer sm: -ml-[200px]   md:-ml-[600px]"
+            className="textContainer "
             variants={textVariants}
             initial="initial"
             animate="animate"
@@ -75,7 +75,7 @@ const Hero = () => {
           </motion.div>
         </div>
         <motion.div
-          className="md:ml-[800px] ml-[10px] slidingTextContainer"
+          className="md:ml-[600px] ml-[10px] slidingTextContainer"
           variants={sliderVariants}
           initial="initial"
           animate="animate"
@@ -86,7 +86,7 @@ const Hero = () => {
             alt=""
           />
         </motion.div>
-        <div className="imageContainer hidden md:block h-full sm:h-20">
+        <div className="imageContainer hidden md:block">
           <img src="https://i.ibb.co/LvMHd4Y/hero.png" alt="" />
         </div>
       </div>

@@ -26,7 +26,7 @@ const Navbar = () => {
   //   link.click();
   // };
   const googleDriveLink =
-    "https://drive.google.com/file/d/1tcW4Zk0qtPv8NEzjVnSyRcH-je8Btzar/view?usp=sharing";
+    "https://drive.google.com/file/d/1jjRfzrOYLVrhNvoQscd-gdk2ZKA8OUtz/view?usp=sharing";
   return (
     // <div className="navbar">
     //   {/* sidebar */}
@@ -71,12 +71,16 @@ const Navbar = () => {
         >
           Omer Faruq
         </motion.span> */}
-        <div className="ml-10 flex gap-2 text-sm md:gap-4 text-1xl ">
+        <div className="ml-10 mr-4 flex gap-4 text-sm md:gap-4 text-1xl ">
           <Link to="home" smooth={true} duration={500}>
-            <button className="hidden md:block">Home</button>
+            <button className="hidden md:block hover:underline underline-offset-8 hover:text-yellow-500">
+              Home
+            </button>
           </Link>
           <Link to="about" smooth={true} duration={500}>
-            <button className="hidden md:block">About</button>
+            <button className="hidden md:block hover:underline underline-offset-8 hover:text-yellow-500">
+              About
+            </button>
           </Link>
           <a
             href={googleDriveLink}
@@ -84,18 +88,29 @@ const Navbar = () => {
             rel="noopener noreferrer"
             download
           >
-            <button>Download Resume</button>
+            <button className="hover:underline underline-offset-8 hover:text-yellow-500">
+              Download Resume
+            </button>
           </a>
 
           <Link to="work" smooth={true} duration={500}>
-            <button> My Work</button>
+            <button className="hover:underline underline-offset-8 hover:text-yellow-500">
+              {" "}
+              My Work
+            </button>
           </Link>
           <Link to="skills" smooth={true} duration={500}>
-            <button>Skills</button>
+            <button className="hover:underline underline-offset-8 hover:text-yellow-500">
+              Skills
+            </button>
           </Link>
-          <h1>Experience</h1>
+          <h1 className="hidden md:block hover:underline underline-offset-8 hover:text-yellow-500">
+            Experience
+          </h1>
           <Link to="contact" smooth={true} duration={500}>
-            <button className="hidden md:block">Contact</button>
+            <button className="hover:underline underline-offset-8 hover:text-yellow-500">
+              Contact
+            </button>
           </Link>
         </div>
       </div>

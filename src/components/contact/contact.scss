@@ -9,12 +9,12 @@
   gap: 50px;
 
   @media (max-width: 320px) {
-    width: 100%;
+    max-width: 320px;
     padding: 10px;
     display: grid;
   }
   @media (max-width: 1024px) {
-    width: 100%;
+    max-width: 1024px;
     padding: 10px;
     display: grid;
   }

@@ -1,39 +1,41 @@
-@import "../../app.scss";
-
 .hero {
   height: calc(100vh - 100px);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Default center alignment for mobile */
   background: linear-gradient(180deg, #0c0c1d, #111132);
   position: relative;
 
+  @media (min-width: 1024px) {
+    justify-content: flex-start; /* Align children to the left on larger screens */
+  }
+
   .wrapper {
     max-width: 1366px;
-    height: 100%;
-    margin: auto;
+    width: 100%;
+    margin: 0 auto; /* Center alignment for mobile */
+    height: auto;
+
+    @media (min-width: 1024px) {
+      margin-left: 50px; /* Add some spacing from the left edge */
+      margin-right: auto;
+      align-items: flex-start;
+    }
 
     .textContainer {
-      width: 70%;
-      height: 100%;
+      width: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      gap: 40px;
-      position: absolute;
-      @media (max-width: 320px) {
-        height: 40%;
-        width: 100%;
-        gap: 10px;
-        align-items: center;
-        text-align: center;
-      }
-      @include mobile {
-      }
+      justify-content: flex-start;
+      align-items: flex-start; /* Align content to the start */
+      text-align: start; /* Left-align text */
+      gap: 10px;
+
       @media (max-width: 1024px) {
-        height: 40%;
-        width: 100%;
-        gap: 10px;
-        align-items: center;
+        justify-content: center; /* Adjust for mobile screens */
         text-align: center;
+        align-items: center;
       }
 
       h2 {
@@ -44,14 +46,13 @@
 
       h1 {
         font-size: 88px;
+
         @media (max-width: 320px) {
           font-size: 36px;
         }
+
         @media (max-width: 1024px) {
           font-size: 36px;
-        }
-
-        @include mobile {
         }
       }
 
@@ -65,47 +66,39 @@
           margin-right: 20px;
           cursor: pointer;
           font-weight: 300;
-          @media (max-width: 320px) {
-            padding: 10px;
-            border: 1px solid white;
-            border-radius: 10px;
-            background-color: transparent;
-            color: white;
-            margin-right: 10px;
-            cursor: pointer;
-            font-weight: 300;
-          }
+
           @media (max-width: 1024px) {
             padding: 10px;
-            border: 1px solid white;
-            border-radius: 10px;
-            background-color: transparent;
-            color: white;
             margin-right: 10px;
-            cursor: pointer;
-            font-weight: 300;
           }
         }
       }
 
       img {
-        width: 50px;
+        width: 100px;
       }
     }
   }
 
   .imageContainer {
-    height: 200%;
+    height: 150%;
     position: absolute;
-    top: -40%;
+    top: -10%;
     right: 0;
+
     @media (max-width: 320px) {
       height: 130%;
       width: 100%;
       top: 20%;
       bottom: 0;
     }
-    @include mobile {
+
+    @media (max-width: 620px) {
+      height: 60%;
+      width: 60%;
+      top: 47%;
+      bottom: 0;
+      right: 10%;
     }
 
     img {
