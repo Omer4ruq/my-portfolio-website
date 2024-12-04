@@ -1,24 +1,58 @@
-import React from "react";
+import React, { useRef } from "react";
 import { data } from "../../data/data";
+import "keen-slider/keen-slider.min.css";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Work = () => {
   const project = data;
+  const slideRef = useRef(null);
+
+  const scrollLeft = () => {
+    slideRef.current?.scrollBy({
+      left: -slideRef.current.offsetWidth,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollRight = () => {
+    slideRef.current?.scrollBy({
+      left: slideRef.current.offsetWidth,
+      behavior: "smooth",
+    });
+  };
   return (
     <div>
       <div
         name="work"
-        className="w-full md:h-screen text-gray-300 bg-[#0a192f] absolute"
+        className="w-full md:h-screen text-gray-300 bg-[#0a192f] "
       >
-        <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full p-10">
-          <div className="pb-8">
+        <div className="max-w-[1000px] mx-auto flex flex-col justify-center w-full h-full p-5">
+          <div className="pb-2 text-center md:text-start">
             <p className="text-4xl font-bold inline border-b-4 text-gray-300 border-pink-600">
               Work
             </p>
             <p className="py-6">Check out some of my recent work</p>
           </div>
+          <div className="flex">
+            <button
+              className=" top-1/2 transform  left-5 flex items-center hover:bg-black justify-center w-10 h-10   bg-opacity-50 hover:bg-opacity-75 text-white z-10"
+              onClick={scrollLeft}
+            >
+              <ChevronLeft size={24} />
+            </button>
+            <button
+              className=" top-1/2 transform  right-5 flex items-center hover:bg-black justify-center w-10 h-10   bg-opacity-50 hover:bg-opacity-75 text-white z-10"
+              onClick={scrollRight}
+            >
+              <ChevronRight size={24} />
+            </button>
+          </div>
 
           {/* container for projects */}
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div
+            ref={slideRef}
+            className="flex  justify-between overflow-x-scroll scrollbar-hide gap-5"
+          >
             {/* Gird Item */}
             {project.map((item, index) => (
               <div

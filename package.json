@@ -13,7 +13,9 @@
     "@emailjs/browser": "^3.11.0",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^10.16.16",
+    "keen-slider": "^6.8.6",
     "localforage": "^1.10.0",
+    "lucide-react": "^0.464.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -21,7 +23,9 @@
     "react-router-dom": "^6.20.1",
     "react-scroll": "^1.9.0",
     "sass": "^1.69.5",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "swiper": "^11.1.15",
+    "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",

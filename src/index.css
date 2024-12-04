@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 .content-div {
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
   background-position: center;
-  height: 250px;
+  height: auto;
 }
 
 .content-div:hover {

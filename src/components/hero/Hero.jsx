@@ -75,7 +75,7 @@ const Hero = () => {
           </motion.div>
         </div>
         <motion.div
-          className="md:ml-[600px] ml-[10px] slidingTextContainer"
+          className="md:ml-[900px] ml-[10px] slidingTextContainer"
           variants={sliderVariants}
           initial="initial"
           animate="animate"

@@ -28,14 +28,13 @@ function App() {
       <section>
         <Skills></Skills>
       </section>
-      {/* <section>protfolio2</section>
-      <section>protfolio3</section> */}
+
       <section>
         <Contact></Contact>
       </section>
-      {/* <section>
+      <section>
         <Footer></Footer>
-      </section> */}
+      </section>
     </div>
   );
 }

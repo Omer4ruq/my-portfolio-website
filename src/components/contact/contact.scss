@@ -1,12 +1,9 @@
-@import "../../app.scss";
-
 .contact {
   height: 100%;
   max-width: 1366px;
   margin: auto;
   display: flex;
   align-items: center;
-  gap: 50px;
 
   @media (max-width: 320px) {
     max-width: 320px;
@@ -30,15 +27,6 @@
       text-align: center;
       align-items: center;
       margin-top: 70px;
-    }
-
-    h1 {
-      font-size: 100px;
-      line-height: 88px;
-
-      @media (max-width: 320px) {
-        font-size: 36px;
-      }
     }
 
     span {
