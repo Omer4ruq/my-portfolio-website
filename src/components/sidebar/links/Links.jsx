@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 const variants = {
   open: {
     transition: {
@@ -24,20 +25,25 @@ const itemVariants = {
 };
 
 const Links = () => {
-  const items = ["Homepage", "Services", "Portfolio", "Contact", "About"];
-
+  const items = [
+    { name: "Homepage", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: "Github", url: "https://github.com/Omer4ruq" },
+    { name: "Contact", url: "/contact" },
+    { name: "About", url: "/about" },
+  ];
   return (
     <div>
       <motion.div className="links" variants={variants}>
-        {items.map((item) => (
+        {items.map((item, index) => (
           <motion.a
-            href={`#${item}`}
-            key={item}
+            href={item.url}
+            key={index}
             variants={itemVariants}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            {item}
+            {item.name}
           </motion.a>
         ))}
       </motion.div>

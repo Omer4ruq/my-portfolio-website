@@ -1,53 +1,35 @@
-import { useRef, useState } from "react";
-
-import { motion, useInView } from "framer-motion";
-import emailjs from "@emailjs/browser";
-
-const variants = {
-  initial: {
-    y: 500,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      staggerChildren: 0.1,
-    },
-  },
-};
+import React from "react";
+import "./contact.scss";
 
 const Contact = () => {
-  const ref = useRef();
-  const formRef = useRef();
-  const [error, setError] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [result, setResult] = React.useState("");
 
-  const isInView = useInView(ref, { margin: "-100px" });
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+    formData.append("access_key", "041dd49c-3019-4692-8b31-c6e87130de39");
 
-    emailjs
-      .sendForm(
-        "service_hkdlgwm",
-        "template_2g3vcxl",
-        formRef.current,
-        "J6q1pS19VMVuqoPQs"
-      )
-      .then(
-        (result) => {
-          setSuccess(true);
-        },
-        (error) => {
-          setError(true);
-        }
-      );
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
   };
+
   return (
-    <div className="contact -ml-6 ">
-      <div ref={ref} className="contact w-full bg-[#0a192f] ">
+    <div className="contact mt-44 -ml-6 ">
+      <div className="contact w-full bg-[#0a192f] ">
         <div className="textContainer   ml-20  p-8 md:p-10">
           <h1 className="text-[50px] md:text-[100px] leading-10 md:leading-none ">
             Let’s work together
@@ -67,25 +49,23 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="formContainer block md:hidden  ml-8 mr-0 md:mr-10">
-          <form className="" ref={formRef} onSubmit={sendEmail}>
+        <div className="formContainer block md:hidden -mt-10 ml-8 mr-0 md:mr-10">
+          <form className="" onSubmit={onSubmit}>
             <input type="text" required placeholder="Name" name="name" />
             <input type="email" required placeholder="Email" name="email" />
             <textarea rows={6} placeholder="Message" name="message" />
-            <button>Submit</button>
-            {error && "Error"}
-            {success && "Success"}
+            <button className="text-white hover:text-black">Submit</button>
           </form>
+          <span>{result}</span>
         </div>
         <div className="formContainer hidden md:block mr-0 md:mr-10">
-          <form className="" ref={formRef} onSubmit={sendEmail}>
+          <form className="" onSubmit={onSubmit}>
             <input type="text" required placeholder="Name" name="name" />
             <input type="email" required placeholder="Email" name="email" />
             <textarea rows={8} placeholder="Message" name="message" />
-            <button>Submit</button>
-            {error && "Error"}
-            {success && "Success"}
+            <button className="text-white hover:text-black">Submit</button>
           </form>
+          <span>{result}</span>
         </div>
       </div>
     </div>

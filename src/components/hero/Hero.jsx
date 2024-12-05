@@ -53,7 +53,7 @@ const Hero = () => {
             <motion.h1 variants={textVariants}>
               Full-stack <br></br> Web Developer
             </motion.h1>
-            <motion.div variants={textVariants} className="buttons lg:-mt-8">
+            <motion.div variants={textVariants} className="buttons ">
               <motion.button variants={textVariants}>
                 <Link to="work" smooth={true} duration={500}>
                   See the Latest Works
