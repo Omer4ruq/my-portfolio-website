@@ -9,32 +9,29 @@ import Work from "./components/work/Work";
 
 function App() {
   return (
-    <div className="w-full mb-">
-      <section>
-        <Navbar></Navbar>
-        <Hero></Hero>
+    <div className="w-full">
+      <section id="home" className="min-h-screen">
+        <Navbar />
+        <Hero />
       </section>
 
-      {/* <section>
-     
-      </section> */}
-      <section>
-        <About></About>
+      <section id="about">
+        <About />
       </section>
-      {/* <section>services</section> */}
-      <section>
-        <Work></Work>
+      
+      <section id="work">
+        <Work />
       </section>
-      <section>
-        <Skills></Skills>
+      
+      <section id="skills">
+        <Skills />
       </section>
 
-      <section>
-        <Contact></Contact>
+      <section id="contact">
+        <Contact />
       </section>
-      <section>
-        <Footer></Footer>
-      </section>
+      
+      <Footer />
     </div>
   );
 }

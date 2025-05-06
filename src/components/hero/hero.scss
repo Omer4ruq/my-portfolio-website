@@ -3,118 +3,150 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center; /* Default center alignment for mobile */
+  justify-content: center;
   background: linear-gradient(180deg, #0c0c1d, #111132);
   position: relative;
 
-  @media (min-width: 1024px) {
-    justify-content: flex-start; /* Align children to the left on larger screens */
-  }
-
   .wrapper {
     max-width: 1366px;
-    width: 100%;
-    margin: 0 auto; /* Center alignment for mobile */
+    width: 90%;
+    margin: 0 auto;
     height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    z-index: 2; /* Ensure wrapper is above slidingTextContainer */
 
-    @media (min-width: 1024px) {
-      margin-left: 50px; /* Add some spacing from the left edge */
-      margin-right: auto;
-      align-items: flex-start;
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      justify-content: flex-start; /* Start from top on mobile */
+      padding-top: 20px; /* Add padding to position content at top */
     }
 
     .textContainer {
-      width: 100%;
+      width: 50%;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start; /* Align content to the start */
-      text-align: start; /* Left-align text */
-      gap: 10px;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: start;
+      gap: 15px;
 
       @media (max-width: 1024px) {
-        justify-content: center; /* Adjust for mobile screens */
-        text-align: center;
+        width: 100%;
+        justify-content: center;
         align-items: center;
+        text-align: center;
+        order: 1; /* Text appears first on mobile */
       }
 
       h2 {
         font-size: 30px;
         color: rebeccapurple;
-        letter-spacing: 10px;
+        letter-spacing: 8px;
+
+        @media (max-width: 1024px) {
+          font-size: 24px;
+        }
       }
 
       h1 {
-        font-size: 88px;
-
-        @media (max-width: 320px) {
-          font-size: 36px;
-        }
+        font-size: 64px;
+        line-height: 1.2;
 
         @media (max-width: 1024px) {
           font-size: 36px;
         }
+
+        @media (max-width: 320px) {
+          font-size: 28px;
+        }
       }
 
       .buttons {
+        display: flex;
+        gap: 10px;
+
         button {
-          padding: 20px;
+          padding: 15px 20px;
           border: 1px solid white;
-          border-radius: 10px;
+          border-radius: 8px;
           background-color: transparent;
           color: white;
-          margin-right: 20px;
           cursor: pointer;
           font-weight: 300;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
 
           @media (max-width: 1024px) {
-            padding: 10px;
-            margin-right: 10px;
+            padding: 10px 15px;
+            font-size: 14px;
           }
         }
       }
 
       img {
-        width: 100px;
+        width: 50px;
+        margin-top: 20px;
       }
     }
-  }
 
-  .imageContainer {
-    height: 150%;
-    position: absolute;
-    top: -10%;
-    right: 0;
+    .imageContainer {
+      width: 40%;
+      height: 60%; /* Reduced height for better fit */
+      position: relative;
+      display: block;
+      z-index: 2; /* Above slidingTextContainer */
 
-    @media (max-width: 320px) {
-      height: 130%;
-      width: 100%;
-      top: 20%;
-      bottom: 0;
-    }
+      @media (max-width: 1024px) {
+        width: 70%;
+        height: 40%;
+        order: 2; /* Image appears second on mobile */
+        margin-top: 10px;
+      }
 
-    @media (max-width: 620px) {
-      height: 60%;
-      width: 60%;
-      top: 47%;
-      bottom: 0;
-      right: 10%;
-    }
+      @media (max-width: 620px) {
+        width: 80%;
+        height: 30%;
+      }
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 10px;
+      }
     }
   }
 
   .slidingTextContainer {
     position: absolute;
-    font-size: 10vh;
-    bottom: -500px;
-    white-space: nowrap;
-    color: #ffffff09;
-    width: 80%;
-    font-weight: normal;
+    top: 0; /* Position at top to float behind */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* Behind hero image and text */
+    pointer-events: none; /* Prevent interaction */
+
+    img {
+      width: 60%; /* Smaller to avoid overwhelming */
+      height: auto;
+      opacity: 0.3; /* Subtle background effect */
+      object-fit: contain;
+    }
+
+    @media (max-width: 1024px) {
+      img {
+        width: 80%;
+      }
+    }
   }
 }

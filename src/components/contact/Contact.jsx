@@ -28,44 +28,36 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact mt-44 -ml-6 ">
-      <div className="contact w-full bg-[#0a192f] ">
-        <div className="textContainer   ml-20  p-8 md:p-10">
-          <h1 className="text-[50px] md:text-[100px] leading-10 md:leading-none ">
-            Let’s work together
+    <div className="contact-section w-full bg-[#0a192f] py-16">
+      <div className="contact max-w-[1366px] mx-auto px-4 md:px-8">
+        <div className="textContainer p-4 md:p-8">
+          <h1 className="text-4xl md:text-6xl lg:text-[80px] leading-tight mb-8">
+            Let's work together
           </h1>
-          <div className="hidden md:block ">
+          <div className="hidden md:block">
             <div className="item pb-6">
-              <h2>Mail</h2>
+              <h2 className="font-bold text-xl mb-1">Mail</h2>
               <span>omerfaruq4@gmail.com</span>
             </div>
             <div className="item pb-6">
-              <h2>Address</h2>
+              <h2 className="font-bold text-xl mb-1">Address</h2>
               <span>Chawkbazar, Chattagram, Bangladesh</span>
             </div>
             <div className="item">
-              <h2>Phone</h2>
+              <h2 className="font-bold text-xl mb-1">Phone</h2>
               <span>+8801621172814</span>
             </div>
           </div>
         </div>
-        <div className="formContainer block md:hidden -mt-10 ml-8 mr-0 md:mr-10">
-          <form className="" onSubmit={onSubmit}>
-            <input type="text" required placeholder="Name" name="name" />
-            <input type="email" required placeholder="Email" name="email" />
-            <textarea rows={6} placeholder="Message" name="message" />
-            <button className="text-white hover:text-black">Submit</button>
+        
+        <div className="formContainer w-full md:w-3/4 mx-auto">
+          <form className="w-full" onSubmit={onSubmit}>
+            <input className="w-full p-3 mb-4" type="text" required placeholder="Name" name="name" />
+            <input className="w-full p-3 mb-4" type="email" required placeholder="Email" name="email" />
+            <textarea className="w-full p-3 mb-4" rows={6} placeholder="Message" name="message" />
+            <button className="w-full md:w-auto px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white transition-colors">Submit</button>
           </form>
-          <span>{result}</span>
-        </div>
-        <div className="formContainer hidden md:block mr-0 md:mr-10">
-          <form className="" onSubmit={onSubmit}>
-            <input type="text" required placeholder="Name" name="name" />
-            <input type="email" required placeholder="Email" name="email" />
-            <textarea rows={8} placeholder="Message" name="message" />
-            <button className="text-white hover:text-black">Submit</button>
-          </form>
-          <span>{result}</span>
+          <span className="block mt-4 text-center">{result}</span>
         </div>
       </div>
     </div>

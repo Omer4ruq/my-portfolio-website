@@ -15,67 +15,38 @@ import three from "../../assets/projects/threejs.png";
 
 const Skills = () => {
   return (
-    <div className=" ">
-      <div name="skills" className="w-full   bg-[#0a192f] text-gray-300 ">
-        {/* Container */}
-        <div className="max-w-[1000px] mx-auto flex flex-col justify-center w-full h-full p-5">
-          <div className="text-center md:text-start mb-0 md:mb-12">
-            <p className="text-4xl font-bold inline border-b-4 border-pink-600 ">
-              Skills
-            </p>
-            <p className="py-4">These are the technologies I've worked with</p>
-          </div>
+    <div className="w-full bg-[#0a192f] text-gray-300 py-16">
+      <div className="max-w-[1000px] mx-auto px-4 md:px-8">
+        <div className="mb-8 text-center md:text-left">
+          <h2 className="text-3xl md:text-4xl font-bold inline border-b-4 border-pink-600">
+            Skills
+          </h2>
+          <p className="py-4">These are the technologies I've worked with</p>
+        </div>
 
-          <div className="w-full grid grid-cols-4 sm:grid-cols-4 gap-4 text-center py-2">
-            <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-              <img className="w-20 mx-auto" src={HTML} alt="HTML icon" />
-              <p className="my-4">HTML</p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-8">
+          {[
+            { img: HTML, name: "HTML" },
+            { img: CSS, name: "CSS" },
+            { img: JavaScript, name: "JAVASCRIPT" },
+            { img: ReactImg, name: "REACT" },
+            { img: GitHub, name: "GITHUB" },
+            { img: Node, name: "NODE JS" },
+            { img: Mongo, name: "MONGO DB" },
+            { img: Tailwind, name: "TAILWIND" },
+            { img: FireBase, name: "FIREBASE" },
+            { img: redux, name: "Redux" },
+            { img: next, name: "Next.js" },
+            { img: three, name: "Three.js" }
+          ].map((skill, index) => (
+            <div 
+              key={index} 
+              className="shadow-md shadow-[#040c16] hover:scale-105 duration-300 p-4 rounded-lg flex flex-col items-center justify-center"
+            >
+              <img className="w-16 h-16 object-contain mb-3" src={skill.img} alt={`${skill.name} icon`} />
+              <p className="text-center">{skill.name}</p>
             </div>
-            <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-              <img className="w-20 mx-auto" src={CSS} alt="HTML icon" />
-              <p className="my-4">CSS</p>
-            </div>
-            <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-              <img className="w-20 mx-auto" src={JavaScript} alt="HTML icon" />
-              <p className="my-4">JAVASCRIPT</p>
-            </div>
-            <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-              <img className="w-20 mx-auto" src={ReactImg} alt="HTML icon" />
-              <p className="my-4">REACT</p>
-            </div>
-            <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-              <img className="w-20 mx-auto" src={GitHub} alt="HTML icon" />
-              <p className="my-4">GITHUB</p>
-            </div>
-            <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-              <img className="w-20 mx-auto" src={Node} alt="HTML icon" />
-              <p className="my-4">NODE JS</p>
-            </div>
-            <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-              <img className="w-20 mx-auto" src={Mongo} alt="HTML icon" />
-              <p className="my-4">MONGO DB</p>
-            </div>
-            <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-              <img className="w-20 mx-auto" src={Tailwind} alt="HTML icon" />
-              <p className="my-4">TAILWIND</p>
-            </div>
-            <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-              <img className="w-20 mx-auto" src={FireBase} alt="HTML icon" />
-              <p className="my-4">FIREBASE</p>
-            </div>
-            <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-              <img className="w-20 mx-auto" src={redux} alt="HTML icon" />
-              <p className="my-4">Redux</p>
-            </div>
-            <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-              <img className="w-20 mx-auto" src={next} alt="HTML icon" />
-              <p className="my-4">Next.js</p>
-            </div>
-            <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-              <img className="w-20 mx-auto" src={three} alt="HTML icon" />
-              <p className="my-4">Three.js</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

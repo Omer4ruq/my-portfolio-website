@@ -12,20 +12,26 @@ html {
 body {
   background-color: #0a192f;
   color: lightgray;
-  width: auto;
-  height: auto;
+  width: 100%;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
   color: inherit;
 }
 section {
-  height: 100vh;
+  min-height: 100vh;
   scroll-snap-align: center;
+  width: 100%;
+  
+  @media (max-width: 768px) {
+    min-height: auto;
+    padding: 3rem 0;
+  }
 }
 
 @mixin mobile {
-  @media (max-width: 320px) {
+  @media (max-width: 640px) {
     @content;
   }
 }
