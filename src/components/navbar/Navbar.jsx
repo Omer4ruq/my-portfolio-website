@@ -24,14 +24,6 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="wrapper">
-        {/* Sidebar */}
-        <Sidebar className={nav ? "sidebar active" : "sidebar"} />
-
-        {/* Mobile Menu Toggle */}
-        {/* <div className="mobile-menu-toggle md:hidden" onClick={handleClick}>
-          {!nav ? <FaBars size={24} /> : <FaTimes size={24} />}
-        </div> */}
-
         {/* Logo */}
         <motion.span
           className="logo"
@@ -42,13 +34,18 @@ const Navbar = () => {
           Omer Faruq
         </motion.span>
 
+        {/* Mobile Menu Toggle */}
+        {/* <div className="mobile-menu-toggle" onClick={handleClick}>
+          {!nav ? <FaBars size={24} /> : <FaTimes size={24} />}
+        </div> */}
+
         {/* Nav Links */}
         <div className={nav ? "nav-links active" : "nav-links"}>
           <Link to="home" smooth={true} duration={500} onClick={() => setNav(false)}>
-            <button className="nav-button">Home</button>
+            <button className="nav-button" aria-label="Navigate to home">Home</button>
           </Link>
           <Link to="about" smooth={true} duration={500} onClick={() => setNav(false)}>
-            <button className="nav-button">About</button>
+            <button className="nav-button" aria-label="Navigate to about">About</button>
           </Link>
           <a
             href={googleDriveLink}
@@ -56,21 +53,24 @@ const Navbar = () => {
             rel="noopener noreferrer"
             onClick={() => setNav(false)}
           >
-            <button className="nav-button">Download Resume</button>
+            <button className="nav-button" aria-label="Download resume">Download Resume</button>
           </a>
           <Link to="work" smooth={true} duration={500} onClick={() => setNav(false)}>
-            <button className="nav-button">My Work</button>
+            <button className="nav-button" aria-label="Navigate to work">My Work</button>
           </Link>
           <Link to="skills" smooth={true} duration={500} onClick={() => setNav(false)}>
-            <button className="nav-button">Skills</button>
+            <button className="nav-button" aria-label="Navigate to skills">Skills</button>
           </Link>
           <Link to="experience" smooth={true} duration={500} onClick={() => setNav(false)}>
-            <button className="nav-button">Experience</button>
+            <button className="nav-button" aria-label="Navigate to experience">Experience</button>
           </Link>
           <Link to="contact" smooth={true} duration={500} onClick={() => setNav(false)}>
-            <button className="nav-button">Contact</button>
+            <button className="nav-button" aria-label="Navigate to contact">Contact</button>
           </Link>
         </div>
+
+        {/* Sidebar */}
+        <Sidebar className={nav ? "sidebar active" : "sidebar"} onLinkClick={() => setNav(false)} />
       </div>
 
       {/* Social Links */}
@@ -78,22 +78,22 @@ const Navbar = () => {
         <ul>
           <li>
             <a href="https://www.linkedin.com/in/md-omer-faruq-3b36b29a/" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin size={30} /> LinkedIn
+            LinkedIn <FaLinkedin size={30} /> 
             </a>
           </li>
           <li>
             <a href="https://github.com/Omer4ruq" target="_blank" rel="noopener noreferrer">
-              <FaGithub size={30} /> GitHub
+            GitHub <FaGithub size={30} /> 
             </a>
           </li>
           <li>
             <a href="mailto:omerfaruq4@gmail.com">
-              <HiOutlineMail size={30} /> Email
+            Email <HiOutlineMail size={30} /> 
             </a>
           </li>
           <li>
             <a href={googleDriveLink} target="_blank" rel="noopener noreferrer">
-              <BsFillPersonLinesFill size={30} /> Resume
+            Resume <BsFillPersonLinesFill size={30} /> 
             </a>
           </li>
         </ul>
