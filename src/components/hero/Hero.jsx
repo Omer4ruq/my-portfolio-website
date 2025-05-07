@@ -15,25 +15,19 @@ const textVariants = {
       staggerChildren: 0.1,
     },
   },
-  scrollButton: {
-    opacity: 0,
-    y: 10,
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-    },
-  },
 };
 
 const sliderVariants = {
   initial: {
-    x: -100,
+    y: "50%", // Reduced range for smaller animation
+    x: "0",
   },
   animate: {
-    x: 100,
+    y: "-50%", // Reduced range for smaller animation
+    x: "0",
     transition: {
       repeat: Infinity,
-      repeatType: "loop",
+      repeatType: "reverse",
       duration: 12,
     },
   },
@@ -53,6 +47,7 @@ const Hero = () => {
           alt="Code snippet"
         />
       </motion.div>
+
       <div className="wrapper">
         <motion.div
           className="textContainer"
@@ -76,13 +71,8 @@ const Hero = () => {
               </Link>
             </motion.button>
           </motion.div>
-          {/* <motion.img
-            variants={textVariants}
-            animate="scrollButton"
-            src="/scroll.png"
-            alt="Scroll down"
-          /> */}
         </motion.div>
+
         <div className="imageContainer">
           <motion.img
             src="https://i.ibb.co/LvMHd4Y/hero.png"

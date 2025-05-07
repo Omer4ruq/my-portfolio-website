@@ -78,22 +78,22 @@ const Navbar = () => {
         <ul>
           <li>
             <a href="https://www.linkedin.com/in/md-omer-faruq-3b36b29a/" target="_blank" rel="noopener noreferrer">
-            LinkedIn <FaLinkedin size={30} /> 
+              LinkedIn <FaLinkedin size={30} />
             </a>
           </li>
           <li>
             <a href="https://github.com/Omer4ruq" target="_blank" rel="noopener noreferrer">
-            GitHub <FaGithub size={30} /> 
+              GitHub <FaGithub size={30} />
             </a>
           </li>
           <li>
             <a href="mailto:omerfaruq4@gmail.com">
-            Email <HiOutlineMail size={30} /> 
+              Email <HiOutlineMail size={30} />
             </a>
           </li>
           <li>
             <a href={googleDriveLink} target="_blank" rel="noopener noreferrer">
-            Resume <BsFillPersonLinesFill size={30} /> 
+              Resume <BsFillPersonLinesFill size={30} />
             </a>
           </li>
         </ul>

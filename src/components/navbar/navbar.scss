@@ -1,40 +1,6 @@
 @import "../../app.scss";
 
 .navbar {
-  height: 100px;
-
-  .wrapper {
-    max-width: 1366px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    height: 100%;
-    @media (max-width: 320px) {
-      display: none;
-      max-width: 200px;
-    }
-    @include mobile {
-      justify-content: center;
-    }
-  }
-  .n {
-    font-weight: bold;
-    @media (max-width: 320px) {
-      display: none;
-    }
-    @include mobile {
-
-    }
-  }
-  .opt {
-    display: flex;
-    gap: 20px;
-  }
-}
-
-.navbar {
   background: #0a192f;
   height: 80px;
   width: 100%;
@@ -54,22 +20,28 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   position: relative;
-
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
   white-space: nowrap;
-
-  @media (max-width: 1024px) {
-    font-size: 1.25rem;
-  }
+  position: absolute;
+  left: 10%;
+  transform: translateX(-50%);
 
   @media (max-width: 768px) {
     font-size: 1.1rem;
+    left: auto;
+    right: 3rem;
+    transform: none;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 1rem;
+    right: 2.5rem;
   }
 }
 
@@ -78,8 +50,10 @@
   gap: 0.75rem;
   align-items: center;
   flex-wrap: wrap;
+  position: absolute;
+  right: 0;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     display: none;
     &.active {
       display: flex;
@@ -93,10 +67,6 @@
       z-index: 99;
       gap: 1rem;
     }
-  }
-
-  @media (max-width: 768px) {
-    gap: 1.5rem;
   }
 }
 
@@ -116,7 +86,7 @@
     text-underline-offset: 8px;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     font-size: 1rem;
     padding: 0.75rem;
   }
@@ -127,7 +97,7 @@
   cursor: pointer;
   color: #d1d5db;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     display: block;
     position: absolute;
     right: 1rem;

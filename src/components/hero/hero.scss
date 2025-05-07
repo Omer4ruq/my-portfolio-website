@@ -16,13 +16,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
-    z-index: 2; /* Ensure wrapper is above slidingTextContainer */
+    z-index: 2;
 
     @media (max-width: 1024px) {
       flex-direction: column;
-      justify-content: flex-start; /* Start from top on mobile */
-      padding-top: 20px; /* Add padding to position content at top */
+      justify-content: flex-start;
+      padding-top: 10px;
     }
 
     .textContainer {
@@ -39,7 +38,8 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        order: 1; /* Text appears first on mobile */
+        order: 1;
+        margin-top: 50px;
       }
 
       h2 {
@@ -89,30 +89,21 @@
           }
         }
       }
-
-      img {
-        width: 50px;
-        margin-top: 20px;
-      }
     }
 
     .imageContainer {
-      width: 40%;
-      height: 60%; /* Reduced height for better fit */
+      width: 50%;
+      height: 80%;
       position: relative;
       display: block;
-      z-index: 2; /* Above slidingTextContainer */
+      z-index: 2;
+      margin-top: 0;
 
       @media (max-width: 1024px) {
-        width: 70%;
-        height: 40%;
-        order: 2; /* Image appears second on mobile */
-        margin-top: 10px;
-      }
-
-      @media (max-width: 620px) {
-        width: 80%;
-        height: 30%;
+        width: 100%;
+        height: auto;
+        order: 2;
+        margin-top: 30px;
       }
 
       img {
@@ -126,26 +117,29 @@
 
   .slidingTextContainer {
     position: absolute;
-    top: 0; /* Position at top to float behind */
-    left: 0;
-    width: 100%;
+    top: 0;
+    left: 50%;
+    width: 50%;
     height: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    z-index: 1; /* Behind hero image and text */
-    pointer-events: none; /* Prevent interaction */
+    z-index: 1;
+    pointer-events: none;
 
     img {
-      width: 60%; /* Smaller to avoid overwhelming */
+      width: 100%;
       height: auto;
-      opacity: 0.3; /* Subtle background effect */
+      opacity: 0.15;
       object-fit: contain;
     }
 
     @media (max-width: 1024px) {
+      left: 0;
+      width: 100%;
+      justify-content: center;
       img {
-        width: 80%;
+        width: 70%;
       }
     }
   }
