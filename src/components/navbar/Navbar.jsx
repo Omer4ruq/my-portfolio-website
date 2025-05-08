@@ -19,7 +19,7 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   const googleDriveLink =
-    "https://drive.google.com/file/d/1jjRfzrOYLVrhNvoQscd-gdk2ZKA8OUtz/view?usp=sharing";
+    "https://drive.google.com/file/d/1vE58d7VF6WMweteUQnGGfQc2vGokHtv_/view?usp=sharing";
 
   return (
     <nav className="navbar">

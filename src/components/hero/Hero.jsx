@@ -11,7 +11,7 @@ const textVariants = {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 0.8, // Slightly faster for smoother feel
       staggerChildren: 0.1,
     },
   },
@@ -19,16 +19,14 @@ const textVariants = {
 
 const sliderVariants = {
   initial: {
-    y: "50%", // Reduced range for smaller animation
-    x: "0",
+    y: "10%", // Reduced range for subtler animation
   },
   animate: {
-    y: "-50%", // Reduced range for smaller animation
-    x: "0",
+    y: "-10%",
     transition: {
       repeat: Infinity,
       repeatType: "reverse",
-      duration: 12,
+      duration: 10, // Slightly faster for better pacing
     },
   },
 };
@@ -42,10 +40,7 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        <img
-          src="https://i.ibb.co/Z8N301V/codesnip.png"
-          alt="Code snippet"
-        />
+        <img src="https://i.ibb.co/Z8N301V/codesnip.png" alt="Code snippet" />
       </motion.div>
 
       <div className="wrapper">
@@ -73,15 +68,14 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        <div className="imageContainer">
-          <motion.img
-            src="https://i.ibb.co/LvMHd4Y/hero.png"
-            alt="Hero image"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-          />
-        </div>
+        <motion.div
+          className="imageContainer"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <img src="https://i.ibb.co/LvMHd4Y/hero.png" alt="Hero image" />
+        </motion.div>
       </div>
     </div>
   );

@@ -65,7 +65,7 @@ const Work = () => {
             >
               {/* Hover effect for images */}
               <div className="absolute inset-0 bg-gradient-to-r from-[rgba(112,157,255,0.8)] to-[hsla(242,74%,61%,0.8)] opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center transition-opacity duration-300">
-                <span className="text-xl md:text-2xl font-bold text-white tracking-wider mb-4">
+                <span className="text-xl text-center md:text-2xl font-bold text-white tracking-wider mb-4">
                   {item.name}
                 </span>
                 <div className="flex space-x-2">
