@@ -1,3 +1,4 @@
+
 import Sidebar from "../sidebar/Sidebar";
 import "./navbar.scss";
 import { motion } from "framer-motion";
@@ -35,17 +36,31 @@ const Navbar = () => {
         </motion.span>
 
         {/* Mobile Menu Toggle */}
-        {/* <div className="mobile-menu-toggle" onClick={handleClick}>
+        {/* <div className="mobile-menu-toggle " onClick={handleClick}>
           {!nav ? <FaBars size={24} /> : <FaTimes size={24} />}
         </div> */}
 
         {/* Nav Links */}
         <div className={nav ? "nav-links active" : "nav-links"}>
-          <Link to="home" smooth={true} duration={500} onClick={() => setNav(false)}>
-            <button className="nav-button" aria-label="Navigate to home">Home</button>
+          <Link
+            to="home"
+            smooth={true}
+            duration={500}
+            onClick={() => setNav(false)}
+          >
+            <button className="nav-button" aria-label="Navigate to home">
+              Home
+            </button>
           </Link>
-          <Link to="about" smooth={true} duration={500} onClick={() => setNav(false)}>
-            <button className="nav-button" aria-label="Navigate to about">About</button>
+          <Link
+            to="about"
+            smooth={true}
+            duration={500}
+            onClick={() => setNav(false)}
+          >
+            <button className="nav-button" aria-label="Navigate to about">
+              About
+            </button>
           </Link>
           <a
             href={googleDriveLink}
@@ -53,36 +68,74 @@ const Navbar = () => {
             rel="noopener noreferrer"
             onClick={() => setNav(false)}
           >
-            <button className="nav-button" aria-label="Download resume">Download Resume</button>
+            <button className="nav-button" aria-label="Download resume">
+              Download Resume
+            </button>
           </a>
-          <Link to="work" smooth={true} duration={500} onClick={() => setNav(false)}>
-            <button className="nav-button" aria-label="Navigate to work">My Work</button>
+          <Link
+            to="work"
+            smooth={true}
+            duration={500}
+            onClick={() => setNav(false)}
+          >
+            <button className="nav-button" aria-label="Navigate to work">
+              My Work
+            </button>
           </Link>
-          <Link to="skills" smooth={true} duration={500} onClick={() => setNav(false)}>
-            <button className="nav-button" aria-label="Navigate to skills">Skills</button>
+          <Link
+            to="skills"
+            smooth={true}
+            duration={500}
+            onClick={() => setNav(false)}
+          >
+            <button className="nav-button" aria-label="Navigate to skills">
+              Skills
+            </button>
           </Link>
-          <Link to="experience" smooth={true} duration={500} onClick={() => setNav(false)}>
-            <button className="nav-button" aria-label="Navigate to experience">Experience</button>
+          <Link
+            to="experience"
+            smooth={true}
+            duration={500}
+            onClick={() => setNav(false)}
+          >
+            <button className="nav-button" aria-label="Navigate to experience">
+              Experience
+            </button>
           </Link>
-          <Link to="contact" smooth={true} duration={500} onClick={() => setNav(false)}>
-            <button className="nav-button" aria-label="Navigate to contact">Contact</button>
+          <Link
+            to="contact"
+            smooth={true}
+            duration={500}
+            onClick={() => setNav(false)}
+          >
+            <button className="nav-button" aria-label="Navigate to contact">
+              Contact
+            </button>
           </Link>
         </div>
 
         {/* Sidebar */}
-        <Sidebar className={nav ? "sidebar active" : "sidebar"} onLinkClick={() => setNav(false)} />
+        <Sidebar onLinkClick={() => setNav(false)} />
       </div>
 
       {/* Social Links */}
       <div className="social-links">
         <ul>
           <li>
-            <a href="https://www.linkedin.com/in/md-omer-faruq-3b36b29a/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.linkedin.com/in/md-omer-faruq-3b36b29a/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               LinkedIn <FaLinkedin size={30} />
             </a>
           </li>
           <li>
-            <a href="https://github.com/Omer4ruq" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com/Omer4ruq"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               GitHub <FaGithub size={30} />
             </a>
           </li>
@@ -92,7 +145,11 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href={googleDriveLink} target="_blank" rel="noopener noreferrer">
+            <a
+              href={googleDriveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Resume <BsFillPersonLinesFill size={30} />
             </a>
           </li>

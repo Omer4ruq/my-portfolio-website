@@ -14,7 +14,7 @@ const About = () => {
         {/* About Content */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* First Text Section */}
-          <div className="text-center md:text-right text-xl md:text-2xl lg:text-3xl font-bold">
+          <div className="text-center flex items-center md:text-right text-xl md:text-2xl lg:text-3xl font-bold">
             <p>
               Hi, I'm Omer Faruq, a Computer Science and Engineering graduate.
               Nice to meet you! Please take a look around.
@@ -24,8 +24,13 @@ const About = () => {
           {/* Second Text Section */}
           <div className="text-center md:text-left">
             <p>
-              I am passionate about building excellent software that improves
-              the lives of those around me. I specialize in creating software
+            a passionate Front-End Developer with a knack for building engaging, responsive, and user-focused web applications. I specialize in React.js, Next.js, and Tailwind CSS, 
+            and I take pride in transforming ideas into interactive digital experiences.
+            With a background in computer science and hands-on experience developing everything from e-commerce platforms to POS systems, I focus on writing clean, efficient code that’s easy to maintain and scalable. I'm currently expanding my skills in TypeScript, SEO optimization, and accessible design, with a long-term goal of becoming a full-stack or data-focused engineer.
+
+When I’m not coding, you’ll find me exploring the cosmos (seriously—I love astrophysics), gaming into the night, or refining my JavaScript knowledge to stay interview-ready and future-proof.
+
+I believe in continuous learning, creative problem-solving, and crafting web experiences that not only work great—but feel great. I specialize in creating software
               for clients ranging from individuals and small businesses all
               the way to large enterprise corporations. What would you do if
               you had a software expert available at your fingertips?
